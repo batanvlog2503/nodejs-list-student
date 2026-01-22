@@ -1,0 +1,103 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr class="text-center">
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">MSV</th>
+      <th scope="col">Class</th>
+      <th scope="col">Hometown</th>
+      <th scope="col">Address</th>
+      <th scope="col">Department</th>
+      <th scope="col">Gpa</th>
+      <th scope="col" colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each student}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.msv}}</td>
+        <td>{{this.class}}</td>
+        <td>{{this.hometown}}</td>
+        <td>{{this.address}}</td>
+        <td>{{this.department}}</td>
+        <td>{{this.gpa}}</td>
+        <td>
+          <a
+            style="color:blue"
+            href="/students/{{this._id}}/edit"
+            class="btn btn-link"
+          >Sửa</a>
+        </td>
+        <td>
+          <a
+            style="color: red;"
+            href=""
+            class="btn btn-link"
+            data-toggle="modal"
+            data-target="#delete-student-modal"
+            data-id="{{this._id}}"
+          >Xóa</a>
+          {{! data-target :delete-student-modal 
+          hướng tới alert id dưới kia}}
+        </td>
+      </tr>
+
+    {{else}}
+      <tr>
+        <td colspan="5" class="text-center">
+          không có dữ liệu sinh viên
+          <a href="/students/create">Thêm Sinh Viên Quản lý</a>
+        </td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>
+
+{{! id: { type: Number, unique: true },
+    name: { type: String, maxLength: 100 },
+    msv: { type: String, unique: true, maxLength: 100 },
+    class: { type: String, maxLength: 100 },
+    hometown: { type: String, maxLength: 100 },
+    address: { type: String, maxLength: 100 },
+    department: { type: String, maxLength: 100 },
+    gpa: { type: Number },
+    slug: { type: String, unique: true }, }}
+
+{{! Confirm }}
+
+<div id="delete-student-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thông Báo</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn Có chắc xóa thông tin của Sinh Viên này? </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+        <button
+          id="btn-delete-student"
+          type="button"
+          class="btn btn-danger"
+        >Xóa</button>
+
+      </div>
+    </div>
+  </div>
+</div>

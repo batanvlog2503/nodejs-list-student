@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+  <div class="container-fluid navbar-header">
+
+    <a class="navbar-brand" href="/">TanTan</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        {{! <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> }}
+        <li class="nav-item dropdown">
+
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://th.bing.com/th/id/OIP.rSe8EsqB6GLOs1MoEidX7gHaJX?w=135&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+              alt="user-avatar"
+              class="user-avatar"
+            />
+            Tân Phạm
+          </a>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/students/view">View All Students</a>
+            <a class="dropdown-item" href="/students/create">Add Student</a>
+            {{! là đường dẫn trong url luôn chứ k phải đường dẫn tới File }}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+      </ul>
+      {{! <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+      >Search</button>
+    </form> }}
+
+    </div>
+  </div>
+</nav>

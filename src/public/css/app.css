@@ -1,0 +1,19 @@
+.header {
+  color: red;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.navbar-header {
+  background-color: grey;
+}
+
+.title-welcome {
+  font-size: 90px;
+}
+
+/*# sourceMappingURL=app.css.map */
